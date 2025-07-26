@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>CF395444388EBC40F22BB8A36FFAB5A1700BC0FC221DF6629B4DBEF296D8A831</string>
+	<key>BUNDLE_ID</key>
+	<string>com.manasmalla.chaosclinic</string>
+	<key>SERVER_URL</key>
+	<string>https://apptics.zoho.in</string>
+</dict>
+</plist>

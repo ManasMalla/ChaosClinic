@@ -3,7 +3,7 @@ import ContactsUI
 
 struct ContactPicker: UIViewControllerRepresentable {
     @Environment(\.presentationMode) var presentationMode
-    var onSelect: (String) -> Void
+    var onSelect: (String, String) -> Void
 
     class Coordinator: NSObject, CNContactPickerDelegate {
         var parent: ContactPicker
@@ -13,8 +13,10 @@ struct ContactPicker: UIViewControllerRepresentable {
         }
 
         func contactPicker(_ picker: CNContactPickerViewController, didSelect contactProperty: CNContactProperty) {
+            let contact = contactProperty.contact
+            let fullName = CNContactFormatter.string(from: contact, style: .fullName) ?? contact.givenName
             if let phoneNumber = contactProperty.value as? CNPhoneNumber {
-                parent.onSelect(phoneNumber.stringValue)
+                parent.onSelect(fullName, phoneNumber.stringValue)
             }
             parent.presentationMode.wrappedValue.dismiss()
         }
